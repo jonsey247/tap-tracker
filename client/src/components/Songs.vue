@@ -16,6 +16,7 @@
             </v-btn>
         <div
         v-for="song in songs"
+        class="song"
         :key="song.id">
 
         <v-layout>
@@ -29,6 +30,18 @@
               <div class ="song-genre">
               {{song.genre}}
               </div>
+
+          <v-btn
+            class="cyan"
+            dark
+            @click="navigateTo({
+              name: 'song', 
+              params: {
+                songId: song.id
+              }
+            })"> 
+            View 
+          </v-btn>
             </v-flex>
 
             <v-flex xs6>
@@ -66,6 +79,23 @@ export default {
 
 
 <style scoped>
+.song {
+  padding: 20px;
+  height: 330px;
+  overflow: hidden;
+}
+
+.song-title {
+  font-size: 30px;
+}
+
+.song-artist {
+  font-size: 24px;
+}
+
+.song-genre {
+  font-size: 18px;
+}
 
 .album-image {
 
