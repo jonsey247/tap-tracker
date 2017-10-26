@@ -1,10 +1,7 @@
 <template>
-  <v-layout column>
-    <v-flex xs6 offset-xs3>
-      <panel title="Register">
-        <form
-          name="tab-tracker-form"
-          autocomplete="off">
+<v-layout column>
+  <v-flex xs6 offset-xs3>
+    <panel title="Login">
             <v-text-field
               label="Email"
               v-model="email"
@@ -14,19 +11,17 @@
               label="Password"
               type="password"
               v-model="password"
-              autocomplete="new-password"
             ></v-text-field>
-        </form>
           <br>
           <div class='error' v-html="error" />
           <br>
           <v-btn
             class="cyan"
             dark
-            @click="register"> 
-            Register 
+            @click="login"> 
+            Login 
           </v-btn>
-      </panel>
+    </panel>
     </v-flex>
   </v-layout>
 </template>
@@ -43,9 +38,9 @@ export default {
     }
   },
   methods: {
-    async register () {
+    async login () {
       try {
-        const response = await AuthenticationService.register({
+        const response = await AuthenticationService.login({
           email: this.email,
           password: this.password
         })
