@@ -77,7 +77,6 @@
 </template>
 
 <script>
-import Panel from '../components/Panel'
 import SongServices from '../services/SongsService'
 
 export default {
@@ -116,9 +115,6 @@ export default {
         console.log(err)
       }
     }
-  },
-  components: {
-    Panel
   }
 }
 </script>
