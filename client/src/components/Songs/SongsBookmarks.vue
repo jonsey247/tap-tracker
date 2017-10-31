@@ -1,18 +1,19 @@
+
 <template>
   <panel title="Bookmarks">
-      <v-data-table
+    <v-data-table
       :headers="headers"
       :pagination.sync="pagination"
       :items="bookmarks">
       <template slot="items" scope="props">
-          <td class="text-xs-right">
-              {{props.item.title}}
-          </td>
-          <td class="text-xs-right">
-              {{props.item.artist}}
-          </td>
+        <td class="text-xs-right">
+          {{props.item.title}}
+        </td>
+        <td class="text-xs-right">
+          {{props.item.artist}}
+        </td>
       </template>
-      </v-data-table>
+    </v-data-table>
   </panel>
 </template>
 
@@ -33,7 +34,7 @@ export default {
         }
       ],
       pagination: {
-        sortBy: 'date',
+        sortBy: 'createdAt',
         descending: true
       },
       bookmarks: []
@@ -55,7 +56,5 @@ export default {
 }
 </script>
 
-
-<style scoped>
-
+<style>
 </style>
