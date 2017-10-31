@@ -1,6 +1,9 @@
 <template>
-<v-layout column>
-  <v-flex xs6 offset-xs3>
+<v-layout>
+  <v-flex xs6>
+    <songs-bookmarks />
+  </v-flex>
+  <v-flex xs6 class="ml-2">
       <songs-search-panel />
       <songs-panel class="mt-2"/> 
     </v-flex>
@@ -8,22 +11,19 @@
 </template>
 
 <script>
+import SongsBookmarks from './SongsBookmarks'
 import SongsPanel from './SongsPanel'
 import SongsSearchPanel from './SongsSearchPanel'
 import SongsService from '../../services/SongsService'
 export default {
   components: {
     SongsPanel,
-    SongsSearchPanel
+    SongsSearchPanel,
+    SongsBookmarks
   },
   data () {
     return {
       songs: null
-    }
-  },
-  methods: {
-    navigateTo (route) {
-      this.$router.push(route)
     }
   },
   async mounted () {
