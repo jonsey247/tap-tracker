@@ -77,8 +77,7 @@ export default {
       }
       try {
         const query = {
-          songId: this.song.id,
-          userId: this.user.id
+          songId: this.song.id
         }
         const bookmarks = (await BookmarksService.index(query)).data
         if (bookmarks.length) {
@@ -93,8 +92,7 @@ export default {
     async setAsBookmark () {
       try {
         const bookmark = {
-          songId: this.song.id,
-          userId: this.user.id
+          songId: this.song.id
         }
         this.bookmark = (await BookmarksService.post(bookmark)).data
       } catch (err) {
