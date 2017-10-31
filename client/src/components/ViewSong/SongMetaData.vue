@@ -61,7 +61,7 @@ export default {
   ],
   data () {
     return {
-      bookmark: true
+      bookmark: false
     }
   },
   computed: {
